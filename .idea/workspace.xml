@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58c5c323-eb3b-486a-a185-c396f197a53f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/js/bootstrap.min.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,20 +50,20 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../django_local_library" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/static" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\dev_server\ecommerce" />
-      <recent name="D:\dev_server\ecommerce\main\static\images" />
-      <recent name="D:\dev_server\ecommerce\main\static" />
-      <recent name="D:\dev_server\ecommerce\main\static\css" />
-      <recent name="D:\dev_server\ecommerce\main\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\dev_server\ecommerce\main\static\images" />
       <recent name="D:\dev_server\ecommerce\main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\local_repo\e-commerce\e-commerce\main\static" />
+      <recent name="D:\local_repo\e-commerce\e-commerce\main\static\css" />
+      <recent name="D:\dev_server\ecommerce" />
+      <recent name="D:\dev_server\ecommerce\main\static\images" />
+      <recent name="D:\dev_server\ecommerce\main\static" />
     </key>
   </component>
   <component name="SvnConfiguration">
