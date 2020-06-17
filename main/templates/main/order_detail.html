@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md-9">
+
+            <div>
+<!--                <p>product_id: {{ order_field.id }}</p>-->
+                <br>
+                <h5>{{ order_field.title }}({{ order_field.title.brand }})</h5>
+                <p>Total amount payable: Rs.{{ order_field.title.price }}</p>
+                <p>selected size: {{ order_field.size }}</p>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <table>
+                        {{ form.as_table }}
+                    </table>
+                    <input type="submit" value="Confirm Order">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<br>{% if my_cart %}
+<div class="col-md-4 order-md-2 mb-4" style="
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your order</span>
+            <span class="badge badge-secondary badge-pill">{{ item_count }}</span>
+          </h4>
+          <ul class="list-group mb-3">
+                {% for item in my_cart %}
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">{{ item.brand }}</h6>
+                <small class="text-muted">{{ item.title }}</small>
+              </div>
+              <span class="text-muted">Rs. {{ item.price }}</span>
+            </li>
+                 {% endfor %}
+              <!--
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Second product</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$8</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Third item</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Promo code</h6>
+                <small>EXAMPLECODE</small>
+              </div>
+              <span class="text-success">-$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (USD)</span>
+              <strong>$20</strong>
+            </li>-->
+          </ul>
+        </div>
+ {% else %}
+      <h3>There are no Items.</h3>
+    {% endif %}
+{% endblock %}

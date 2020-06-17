@@ -1,0 +1,68 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container">
+    {% if user.is_authenticated %}
+    <div class="jumbotron mt-3">
+        <div class="row featurette">
+            <div class="col-md-4">
+                {% if product.photo %}
+                <img src="{{ product.photo.url }}" class="featurette-image img-fluid mx-auto" style="display: block; margin-left: auto;  margin-right: auto;width: 100%;">
+
+                <!--        <img src="{{ product.photo.url }}" width="300" height="300"  alt="500x500"-->
+                <!--             data-holder-rendered="true">-->
+
+                {% endif %}
+            </div>
+            <div class="col-md-3">
+                <h3  style="text-align: center; color: #b19975;">{{ product.brand }}</h3>
+                <h2 class="prod-name">{{ product.title }}</h2>
+                <div style="text-align: center;">Rs. {{ product.price }}</div>
+                <div style="text-align: center;">color: {{ product.color }}</div>
+
+                <br>
+                <h2 class="prod-name">available sizes:</h2>
+                <!--        sizes choices-->
+                <!--        <div class="d-block my-3">
+                              <div class="custom-control custom-radio">
+                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                                <label class="custom-control-label" for="credit">Small</label>
+                              </div>
+                            </div>-->
+
+                <!--        buy button-->
+
+
+
+{% if product.productinstance_set.all %}
+                {% for copy in product.productinstance_set.all %}
+                {% csrf_token %}
+                <div class="d-block my-3" >
+                    <!--                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">-->
+                    <!--                    <input type="radio">{{ copy.size }}</input>-->
+
+                    <h2 class="prod-name">
+                        <!--              <button type="submit" class="btn btn-sm btn-outline-secondary" style="text-align:centre;">{{ copy.size }}</button>-->
+                        <a href="{% url 'order' copy.id %}"><button type="submit" class="btn btn-sm btn-outline-secondary" style="text-align:centre;">{{ copy.size }}</button></a>
+                    </h2>
+                    <!--                <label class="custom-control-label" for="credit">{{ copy.size }}</label>-->
+
+                </div>
+                <!--      <p><strong>Imprint:</strong> {{ copy.size }}</p>-->
+                <!--                  -<a href="{% url 'order' copy.id %}">Order now</a>-->
+                <!--<input type="submit" value="Confirm Order">-->
+                {% endfor %}
+                {% else %}
+                <h4 style="text-align: center; color: #FF0000; ">product is out of stock</h4>
+                {% endif %}
+
+
+
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+   {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Product example · Bootstrap</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/product/">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      h2.prod-name
+      {
+          font-size: 18px;
+          text-align: center;
+
+      }
+
+    </style>
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <link href="{% static 'assets/dist/css/bootstrap.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<!--navigation bar sticky-->
+
+<nav class="site-header sticky-top py-1">
+
+<div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+<!--        <a class="text-light" href="#">Subscribe</a>-->
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-light" href="{% url 'index' %}">KL 14 shoppee</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <!--<a class="text-muted" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+        </a>-->
+          {% if user.is_authenticated %}
+<!--     <li>User: {{ user.get_username }}</li>-->
+<!--     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>-->
+          <a class="btn btn-sm btn-outline-secondary text-light" href="{% url 'my-cart' %}"> <svg class="bi bi-handbag" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 1a2 2 0 0 0-2 2v4.5a.5.5 0 0 1-1 0V3a3 3 0 0 1 6 0v4.5a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+  <path fill-rule="evenodd" d="M3.405 6a.5.5 0 0 0-.498.45l-.912 6.9A1.5 1.5 0 0 0 3.488 15h9.024a1.5 1.5 0 0 0 1.493-1.65l-.913-6.9a.5.5 0 0 0-.497-.45h-9.19zm-1.493.35A1.5 1.5 0 0 1 3.405 5h9.19a1.5 1.5 0 0 1 1.493 1.35L15 13.252A2.5 2.5 0 0 1 12.512 16H3.488A2.5 2.5 0 0 1 1 13.251l.912-6.9z"/>
+</svg></a>&nbsp;
+          <a class="btn btn-sm btn-outline-secondary text-light" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+          &nbsp;
+
+   {% else %}
+        <a class="btn btn-sm btn-outline-secondary text-light" href="{% url 'login'%}?next={{request.path}}">Login</a>&nbsp;
+             {% endif %}
+
+      </div>
+    </div>
+
+</nav>
+
+<!--block content-->
+
+{% block content %}{% endblock %}
+
+ {% block pagination %}
+    {% if is_paginated %}
+        <div class="pagination" style="display: flex;
+  justify-content: center;" >
+            <span class="page-links" >
+                {% if page_obj.has_previous %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+  {% endblock %}
+
+<!--footer-->
+
+<footer class="container py-5">
+    <div class="row">
+        <div class="col-12 col-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+                 viewBox="0 0 24 24" focusable="false"><title>Product</title>
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/>
+            </svg>
+            <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
+        </div>
+        <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Cool stuff</a></li>
+                <li><a class="text-muted" href="#">Random feature</a></li>
+                <li><a class="text-muted" href="#">Team feature</a></li>
+                <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                <li><a class="text-muted" href="#">Another one</a></li>
+                <li><a class="text-muted" href="#">Last time</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Resource</a></li>
+                <li><a class="text-muted" href="#">Resource name</a></li>
+                <li><a class="text-muted" href="#">Another resource</a></li>
+                <li><a class="text-muted" href="#">Final resource</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Business</a></li>
+                <li><a class="text-muted" href="#">Education</a></li>
+                <li><a class="text-muted" href="#">Government</a></li>
+                <li><a class="text-muted" href="#">Gaming</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Team</a></li>
+                <li><a class="text-muted" href="#">Locations</a></li>
+                <li><a class="text-muted" href="#">Privacy</a></li>
+                <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="{% static 'assets/dist/js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>
